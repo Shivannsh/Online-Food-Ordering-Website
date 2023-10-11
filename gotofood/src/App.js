@@ -16,13 +16,13 @@ import Signup from './Screens/Signup';
 function App() {
   return (
     <>
-    <Router>
-      <Routes>
-        <Route exact path='/' element={<Home/>}/>
-        <Route exact path='/login' element={<Login/>}/>
-        <Route exact path='/signup' element={<Signup/>}/>
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/login' element={<Login />} />
+          <Route exact path='/createuser' element={<Signup />} />
+        </Routes>
+      </Router>
     </>
   );
 }

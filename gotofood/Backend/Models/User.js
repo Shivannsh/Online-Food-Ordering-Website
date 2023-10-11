@@ -1,30 +1,30 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose;
 
-const Userschema= new Schema({
-    name:{
+const Userschema = new Schema({
+    name: {
         type: String,
-        required:true,
+        required: true,
     },
-    location:{
+    location: {
         type: String,
-        required:true,
+        required: true,
     },
-    email:{
+    email: {
         type: String,
-        required:true,
+        required: true,
     },
-    password:{
+    password: {
         type: String,
-        required:true,
+        required: true,
     },
-    date:{
+    date: {
         type: Date,
-        default:Date.now,
+        default: Date.now,
     },
 })
 
 const User = mongoose.model('User', Userschema)
-module.exports= User
+module.exports = User
 
 // USER NAAM KA EK COLLECTION BANGAYA USME SCHEMA USERSCHEMA H
