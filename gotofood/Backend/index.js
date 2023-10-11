@@ -1,6 +1,6 @@
 const Express =require("express")
 const MongoDb= require("./db")
-const route  = require("./Routes/Createuser")
+const router  = require("./Routes/Createuser")
 const app= Express()
 
 MongoDb()
@@ -8,8 +8,8 @@ MongoDb()
 app.get("/",(req,res)=>{
     res.send("Hello World")
 })
-
-app.use("/api" , route)
+app.use(Express.json())
+app.use("/api" , router)
 
 app.listen(5000, ()=>{
     console.log("Server Running Semxy");
