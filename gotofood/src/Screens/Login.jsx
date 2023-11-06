@@ -17,6 +17,7 @@ export default function Login() {
 
   const handleclick = async (e) => {
     e.preventDefault();
+
     const response = await fetch("http://localhost:5000/api/login", {
       method: "POST",
       headers: {
@@ -27,11 +28,13 @@ export default function Login() {
         password: credentials.password,
       }),
     });
-    const json_backend = await response.json();                      // response.json() is a promise/ response cominf from server side is in json format
+
+    const json_backend = await response.json();   
+                                                                      // response.json() is a promise/ response cominf from server side is in json format
     console.log(json_backend);                                       // yh aapko console mei dekhne ko milega ki json mei kya kya hai
     if (!json_backend.success) {
-                                          // if success is false then it will show alert(jaise backend p humne likha hai json==sucess to vo data aaya or us data ka naam bhi json hi h to isliye json check kiya)
-                                         //save the auth token and redirect
+                                                                          // if success is false then it will show alert(jaise backend p humne likha hai json==sucess to vo data aaya or us data ka naam bhi json hi h to isliye json check kiya)
+                                                                          //save the auth token and redirect
       alert("Invalid Credentials");
     } else {
       localStorage.setItem("token", json_backend.Authtoken); // yh token ko local storage mei save kr dega
